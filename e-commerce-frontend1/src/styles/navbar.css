@@ -35,19 +35,54 @@ transition:0.3s;
 }
 
 /* =========================
-NAVBAR DARK MODE
+LOGIN / LOGOUT LINK COLORS
+========================= */
+/* =========================
+BLINK ANIMATION
 ========================= */
 
-body.dark .navbar{
-background:black;          /* dark black */
-border-bottom:1px solid #374151;
-color: whitesmoke;
+@keyframes softBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
 }
 
-body.dark .navbar a{
-color: whitesmoke;
+/* =========================
+LOGIN / LOGOUT LINK COLORS
+========================= */
+
+/* Login - light green */
+.navbar a[href="/login"].login-link {
+  color: #08ed5c;
+  animation: softBlink 2s ease-in-out infinite;
 }
 
+.navbar a[href="/login"].login-link:hover {
+  color: #22c55e;
+  animation: none; /* stop blinking on hover */
+}
+
+.navbar a[href="/login"].login-link::after {
+  background-color: #22c55e;
+}
+
+.navbar a[href="/login"].login-link.active {
+  color: #22c55e;
+}
+
+/* Logout - light red */
+.navbar a[href="/login"].logout-link {
+  color: #e70909;
+  animation: softBlink 2s ease-in-out infinite;
+}
+
+.navbar a[href="/login"].logout-link:hover {
+  color: #0c0c0c;
+  animation: none; /* stop blinking on hover */
+}
+
+.navbar a[href="/login"].logout-link::after {
+  background-color: #ef4444;
+}
 
 /* =========================
 NAV LEFT

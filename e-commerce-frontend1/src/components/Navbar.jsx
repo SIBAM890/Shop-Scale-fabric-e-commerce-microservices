@@ -82,17 +82,18 @@ function Navbar({ darkMode }) {
         </NavLink>
 
         {token ? (
-          <NavLink
-            to="/login"
-            onClick={logout}
-          >
-            <FontAwesomeIcon icon={faRightToBracket}/> Logout
-          </NavLink>
-        ) : (
-          <NavLink to="/login">
-              <FontAwesomeIcon icon={faRightToBracket}/> Login/SignIn
-          </NavLink>
-    )}
+  <NavLink
+    to="/login"
+    onClick={logout}
+    className="logout-link"
+  >
+    <FontAwesomeIcon icon={faRightToBracket}/> Logout
+  </NavLink>
+) : (
+  <NavLink to="/login" className="login-link">
+    <FontAwesomeIcon icon={faRightToBracket}/> Login/SignIn
+  </NavLink>
+)}
 
       </div>
 
