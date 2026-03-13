@@ -263,9 +263,9 @@
   padding: 12px 18px;
   border-radius: 10px;
   border: none;
-  background: #e1dd62;
-  color: #0a0a0a;
-  border: 1px solid slategrey;
+   border: 1px solid slategrey;
+  background: rgb(161, 155, 155);
+  color: black;
   font-family: 'Syne', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
@@ -319,9 +319,10 @@
   gap: 8px;
   padding: 12px 18px;
   border-radius: 10px;
+
+  background: #e1dd62;
+  color: #0a0a0a;
   border: 1px solid slategrey;
-  background: rgb(161, 155, 155);
-  color: black;
   font-family: 'Syne', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;

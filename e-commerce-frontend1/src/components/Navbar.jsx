@@ -1,6 +1,8 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import "../styles/navbar.css";
+
+import { AuthContext } from "../context/AuthContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,19 +16,27 @@ import {
   faMedal
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ darkMode, toggleTheme }) {
+function Navbar({ darkMode }) {
 
   const [search, setSearch] = useState("");
+
+  const { token, logout } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     console.log("Search:", search);
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <nav className={darkMode ? "navbar navbar-dark" : "navbar"}>
 
-      {/* LEFT */}
       <div className="nav-left">
 
         <h2 className="logo">
@@ -45,7 +55,6 @@ function Navbar({ darkMode, toggleTheme }) {
 
       </div>
 
-      {/* RIGHT */}
       <div className="nav-right">
 
         <NavLink to="/" end>
@@ -53,7 +62,7 @@ function Navbar({ darkMode, toggleTheme }) {
         </NavLink>
 
         <NavLink to="/orders">
-          <FontAwesomeIcon icon={faBox} /> Orders
+          <FontAwesomeIcon icon={faBox}/> Orders
         </NavLink>
 
         <NavLink to="/categories">
@@ -61,7 +70,7 @@ function Navbar({ darkMode, toggleTheme }) {
         </NavLink>
 
         <NavLink to="/settings">
-          <FontAwesomeIcon icon={faGear} /> Settings
+          <FontAwesomeIcon icon={faGear}/> Settings
         </NavLink>
 
         <NavLink to="/account">
@@ -72,11 +81,18 @@ function Navbar({ darkMode, toggleTheme }) {
           <FontAwesomeIcon icon={faCartShopping}/> Cart
         </NavLink>
 
-        <NavLink to="/login">
-          <FontAwesomeIcon icon={faRightToBracket}/> Login/SignIn
-        </NavLink>
-
-       
+        {token ? (
+          <NavLink
+            to="/login"
+            onClick={logout}
+          >
+            <FontAwesomeIcon icon={faRightToBracket}/> Logout
+          </NavLink>
+        ) : (
+          <NavLink to="/login">
+              <FontAwesomeIcon icon={faRightToBracket}/> Login/SignIn
+          </NavLink>
+    )}
 
       </div>
 

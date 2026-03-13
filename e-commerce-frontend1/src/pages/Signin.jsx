@@ -1,14 +1,12 @@
-import { useState, useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles/auth.css";    
 
-function Login(){
+function Signin(){
 
+  const [name,setName] = useState("");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-
-  const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -17,16 +15,22 @@ function Login(){
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
+    const userExists = users.find((u)=>u.email===email);
 
-    if(user){
-      login("sample-token");
-      navigate("/");
-    }else{
-      alert("Invalid email or password");
+    if(userExists){
+      alert("User already exists");
+      return;
     }
+
+    const newUser = { name,email,password };
+
+    users.push(newUser);
+
+    localStorage.setItem("users",JSON.stringify(users));
+
+    alert("Signup successful");
+
+    navigate("/login");
   };
 
   return(
@@ -34,7 +38,15 @@ function Login(){
 
       <form className="auth-form" onSubmit={handleSubmit}>
 
-        <h2>Login</h2>
+        <h2>Sign Up</h2>
+
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
+          required
+        />
 
         <input
           type="email"
@@ -52,11 +64,11 @@ function Login(){
           required
         />
 
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
 
         <p>
-          Don't have an account?
-          <Link to="/signup"> Sign Up</Link>
+          Already have an account?
+          <Link to="/login"> Login</Link>
         </p>
 
       </form>
@@ -65,4 +77,4 @@ function Login(){
   )
 }
 
-export default Login;
+export default Signin;

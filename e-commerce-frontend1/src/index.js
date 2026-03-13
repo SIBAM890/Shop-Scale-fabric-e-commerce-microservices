@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { CartProvider } from "./context/CartContext";   // ADD THIS
+
+import { CartProvider } from "./context/CartContext";
+import { AuthProvider } from "./context/AuthContext";
+
 import "./styles/theme.css";
 import App from "./App";
 
@@ -9,8 +12,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <CartProvider>
-      <App />
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </AuthProvider>
   </BrowserRouter>
 );
