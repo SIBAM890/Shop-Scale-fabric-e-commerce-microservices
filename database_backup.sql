@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict uNJd8ohmMzlxgnC4f33iOWeOdJzJEo24lLA7mRpHFb4brYwlpIfkQMKnHDm32hJ
+\restrict yPLAOSPJlKS3K653AA5L6mORBYBBiFO5PWbGTDmF2sfXLcqw8NpYNzfP4BoybQa
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -219,6 +219,9 @@ COPY public.order_items (id, category, image_url, price, product_id, product_nam
 41	electronics	https://i.pcmag.com/imagery/reviews/01hVqiHjH9X85jJPttOdW1a-2.jpg	90000	3	Dell XPS Laptop	1	33
 42	fashions	https://begin-motorcycling.co.uk/wp-content/uploads/2017/05/tcx_boots_hero_vintage_brown_update.jpeg	799	23	Leather Biker Boots	1	34
 43	fashions	https://i5.walmartimages.com/seo/YUELONGHU-Men-Casual-Crew-Neck-Pullover-Sweatshirts-Men-Zipper-Men-s-Winter-Color-Matching-Stand-Collar-Lamb-Velvet-Zipper-Casual-Hoodie-Quarter-Zip_0c153de4-cb27-4ba5-b324-90d18e368891.d773db3b4b4c0b6e96c8c6ad157a01d2.jpeg	799	29	Cotton Hoodie	1	35
+44	footwears	https://tse3.mm.bing.net/th/id/OIP.fVmDi49MuChEuOlE3TNeUAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3	6150	114	Derby Shoes	1	36
+45	sports	https://tse3.mm.bing.net/th/id/OIP.YyAAMbXkjJ2Bggd1RXPaIwHaHa?w=580&h=580&rs=1&pid=ImgDetMain&o=7&rm=3	999	40	Cricket Batting Gloves	1	37
+46	footwears	https://tse1.mm.bing.net/th/id/OIP.ePoGvzazxYS2r81E0dZxbgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3	5000	103	Running Shoes	1	38
 \.
 
 
@@ -227,18 +230,8 @@ COPY public.order_items (id, category, image_url, price, product_id, product_nam
 --
 
 COPY public.orders (id, customer_email, customer_name, delivery_address, placed_at, status, total_amount) FROM stdin;
-2	franklinsurya4@gmail.com	Franklin	Chennai, Tamil Nadu, India	2026-03-12 11:06:42.467895	CONFIRMED	45000
-3	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 11:37:47.4898	CONFIRMED	55000
-4	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:23:38.368627	CONFIRMED	55000
-5	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:25:08.639064	CONFIRMED	2499
-6	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:32:05.442477	CONFIRMED	45000
-7	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:19:08.172156	CONFIRMED	4499
-8	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:21:55.115999	CONFIRMED	4499
-9	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:30:17.805909	CONFIRMED	4499
-10	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:36:21.430646	CONFIRMED	4499
 11	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:37:07.535067	CONFIRMED	45000
 13	franklinsurya4@gmail.com	Ben	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:06:20.440048	CONFIRMED	9500
-14	franklinsurya4@gmail.com	Ben	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:07:12.32581	CONFIRMED	1299
 12	franklinsurya4@gmail.com	Surya	soutuh street,t,sindalai cherry,theni,tamil nadu,india.	2026-03-12 14:53:56.02594	CANCELLED	45000
 15	franklinsurya4@gmail.com	Curran	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:14:44.232112	CONFIRMED	5000
 16	franklinsurya4@gmail	Franklin Surya	soutuh street,t,sindalai cherry,theni,tamil nadu,india.	2026-03-12 15:17:33.879114	CONFIRMED	94499
@@ -253,14 +246,27 @@ COPY public.orders (id, customer_email, customer_name, delivery_address, placed_
 25	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:37:28.074116	CONFIRMED	55000
 26	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:53:42.955569	CONFIRMED	3599
 27	franklinsurya4@gmail	Franklin Surya	soutuh street,t,sindalai cherry,theni,tamil nadu,india.	2026-03-12 15:58:52.52182	CONFIRMED	511046
-28	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:59:13.258818	CONFIRMED	598
 29	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 16:13:53.853717	CONFIRMED	45000
 31	franklinsurya4@gmail	Franklin Surya	soutuh street,t,sindalai cherry,theni,tamil nadu,india.	2026-03-12 16:15:00.404149	CONFIRMED	1999
 32	franklinsurya4@gmail.com	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 08:57:29.355009	CONFIRMED	79999
 33	ciborachristy8@gmail.com	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 09:01:36.487346	CONFIRMED	90000
 34	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 11:39:23.874592	CONFIRMED	898
-35	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 11:46:12.265151	CONFIRMED	898
 30	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 16:14:21.577492	CANCELLED	35000
+36	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 19:47:07.762195	CONFIRMED	6150
+37	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 20:49:35.583879	CONFIRMED	1098
+28	franklinsurya4@gmail	Franklin Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:59:13.258818	DELIVERED	598
+38	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 21:04:24.696203	DELIVERED	5000
+2	franklinsurya4@gmail.com	Franklin	Chennai, Tamil Nadu, India	2026-03-12 11:06:42.467895	DELIVERED	45000
+3	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 11:37:47.4898	DELIVERED	55000
+4	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:23:38.368627	DELIVERED	55000
+5	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:25:08.639064	DELIVERED	2499
+6	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 13:32:05.442477	DELIVERED	45000
+7	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:19:08.172156	DELIVERED	4499
+8	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:21:55.115999	DELIVERED	4499
+10	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:36:21.430646	DELIVERED	4499
+9	franklinsurya4@gmail.com	Surya	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 14:30:17.805909	SHIPPED	4499
+14	franklinsurya4@gmail.com	Ben	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-12 15:07:12.32581	SHIPPED	1299
+35	franklinsurya4@gmail.com	FRANKLIN SURYA.S	South Street,T.Sindalai Cherry,Theni(dt).	2026-03-13 11:46:12.265151	DELIVERED	898
 \.
 
 
@@ -1215,6 +1221,9 @@ COPY public.product_variants (product_id, variants) FROM stdin;
 
 COPY public.users (id, email, password, username) FROM stdin;
 3	surya@gmail.com	12345	surya
+4	Surya4@gmail.com	1234	Surya
+5	Franklin6@gmail.com	123456	Franklin
+6	franklinsurya4@gmail.com	1234	Franklin Surya
 \.
 
 
@@ -1222,14 +1231,14 @@ COPY public.users (id, email, password, username) FROM stdin;
 -- Name: order_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.order_items_id_seq', 43, true);
+SELECT pg_catalog.setval('public.order_items_id_seq', 46, true);
 
 
 --
 -- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.orders_id_seq', 35, true);
+SELECT pg_catalog.setval('public.orders_id_seq', 38, true);
 
 
 --
@@ -1243,7 +1252,7 @@ SELECT pg_catalog.setval('public.product_id_seq', 213, true);
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 3, true);
+SELECT pg_catalog.setval('public.users_id_seq', 6, true);
 
 
 --
@@ -1306,5 +1315,5 @@ ALTER TABLE ONLY public.product_variants
 -- PostgreSQL database dump complete
 --
 
-\unrestrict uNJd8ohmMzlxgnC4f33iOWeOdJzJEo24lLA7mRpHFb4brYwlpIfkQMKnHDm32hJ
+\unrestrict yPLAOSPJlKS3K653AA5L6mORBYBBiFO5PWbGTDmF2sfXLcqw8NpYNzfP4BoybQa
 
