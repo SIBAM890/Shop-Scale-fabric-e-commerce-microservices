@@ -7,6 +7,9 @@ export default function StoreSettings() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [adminName, setAdminName] = useState("");
   const [password, setPassword] = useState("");
+  const [storeName, setStoreName] = useState("QualityProducts"); // or fetch from API
+  const [categories, setCategories] = useState("Electronics,Fashion,Groceries,Books,Toys,Furniture,Sports,Beauty,Automotive,Jewelry,Music,Health"); // comma-separated string
+
 
   const handleLogin = (name, pass) => {
     setAdminName(name);
@@ -25,14 +28,13 @@ export default function StoreSettings() {
       {!loggedIn ? (
         <AdminLogin onLogin={handleLogin} />
       ) : (
-        <>
-          <h3>ADMIN: {adminName},</h3>
-          <OfferManager
-            adminName={adminName}
-            password={password}
-            onBack={handleLogout} // Pass callback to back button
-          />
-        </>
+        <OfferManager
+          adminName={adminName}
+          password={password}
+          storeName={storeName}       
+          categories={categories}     
+          onBack={handleLogout}
+        />
       )}
     </div>
   );

@@ -1,27 +1,62 @@
-/* COMMON CARD STYLING */
-.settings-card {
+/* ======= Admin Dashboard Container ======= */
+.admin-dashboard-container {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Left: Admin card, Right: Offers panel */
+  gap: 20px;
+  padding: 30px;
+  min-height: 100vh;
+  font-family: 'Sora', sans-serif;
+}
+
+/* ======= Common Card Styles ======= */
+.admin-card {
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 30px;
-  width: 600px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* HEADINGS */
-.settings-card h3 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 100px;
-  margin-bottom: 20px;
-  color: #222;
+/* Admin Info Card (left) */
+.admin-card.admin-info-card {
+  max-height: 350px;
+  padding: 15px;
 }
 
-/* INPUTS */
-.settings-card input {
-  padding: 10px 15px;
+/* Card heading */
+.admin-card h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* ======= Offer Management Panel (Right) ======= */
+.offer-management-wrapper {
+  display: flex;
+  gap: 40px; /* space between form and list */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Form styling (left side of right panel) */
+.offer-form {
+  flex: 1;
+  width: 500px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+/* Inputs inside form */
+.offer-form input {
+  padding: 10px 12px;
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -30,174 +65,153 @@
   transition: border-color 0.2s;
 }
 
-.settings-card input:focus {
+.offer-form input:focus {
   border-color: #007bff;
 }
 
-/* BUTTONS */
-.settings-card button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: #007bff;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 10px;
-}
-
-.settings-card button:hover {
-  background-color: #0056b3;
-}
-
-/* OFFER CARDS */
-.offer-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: #f9f9f9;
+/* Container to place buttons in a row */
+.form-btn-group {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 500px;
-  margin-top: 10px;
-}
-
-.offer-card button {
-  width: 120px;
-  margin-top: 5px;
-  display: flex;
-}
-
-/* Buttons container inside offer card */
-.offer-btn-group {
-  display: flex;
-  justify-content: center; /* center horizontally */
   gap: 10px; /* space between buttons */
   margin-top: 10px;
 }
 
-/* Individual buttons */
-.offer-btn-group button {
-  width: 120px;
-  border-radius: 6px;
-  border: none;
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  color: #fff;
-  transition: background-color 0.2s;
-}
-
-/* Start Offer Button */
-.offer-btn-group button:first-child {
+/* Create Offer button (green) */
+.create-btn {
   background-color: #28a745;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  flex: 1; /* optional: make buttons equal width */
+  transition: all 0.2s ease;
+  height: 35px;
 }
 
-.offer-btn-group button:first-child:hover {
+.create-btn:hover {
   background-color: #1e7e34;
 }
 
-/* End Offer Button */
-.offer-btn-group button:last-child {
+/* Back button (red) */
+.back-btn {
   background-color: #dc3545;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  flex: 1; /* optional: equal width */
+  transition: all 0.2s ease;
+  height: 35px;
 }
 
-.offer-btn-group button:last-child:hover {
+.back-btn:hover {
   background-color: #a71d2a;
 }
 
-/* FLEX LAYOUT FOR FORM + OFFERS SIDE BY SIDE */
-.admin-flex-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  width: 100%;
+/* Offer list container as 2-column grid */
+.offer-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; /* space between cards */
+  margin-top: 15px;
 }
 
-/* OFFER LIST CONTAINER */
-.offer-list {
+/* Individual offer card */
+.offer-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fefefe;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* OFFER BUTTONS STYLING */
-.offer-card button {
-  width: 120px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: none;
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  color: #fff;
+.offer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
 
-  /* center text */
+/* Buttons inside offer card */
+.offer-btn-group {
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  text-align: center;      /* fallback */
+  gap: 10px;
+  justify-content: center;
 }
 
-/* Start Offer Button */
-.offer-card button:nth-of-type(1) {
-  background-color: #28a745; /* green */
+/* Start & End buttons styling */
+.start-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: 1px solid rgb(20, 101, 20);
+  border-radius: 3px;
 }
 
-.offer-card button:nth-of-type(1):hover {
+.start-btn:hover {
   background-color: #1e7e34;
 }
 
-/* End Offer Button */
-.offer-card button:nth-of-type(2) {
-  background-color: #dc3545; /* red */
+.end-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: 1px solid #dc3545;
+  border-radius: 3px;
 }
 
-.offer-card button:nth-of-type(2):hover {
+.end-btn:hover {
   background-color: #a71d2a;
 }
 
-/* Optional: spacing between the buttons */
-.offer-card button + button {
-  margin-left: 10px;
+/* ===== Responsive for smaller screens ===== */
+@media (max-width: 768px) {
+  .offer-list {
+    grid-template-columns: 1fr; /* stack vertically on small screens */
+  }
 }
 
-/* Confirmation toast */
+/* Confirmation animation */
 .offer-confirmation {
   position: fixed;
-  top: 20px;
+  top: 100px;
   right: 20px;
-  color: white;
-  padding: 12px 20px;
+  padding: 15px 20px;
   border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  opacity: 1;
-  animation: fadeOut 2s forwards;
-}
-
-/* Toast types */
-.offer-confirmation.start {
-  background-color: #28a745; /* light green */
-}
-
-.offer-confirmation.end {
-  background-color: #dc3545; /* red */
+  font-size: 1rem;
+  color: #fff;
+  animation: fadeInOut 2s forwards;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
 }
 
 .offer-confirmation.create {
-  background-color: #007bff; /* blue */
+  background-color: #007bff;
 }
 
-@keyframes fadeOut {
-  0% { opacity: 1; transform: translateY(0); }
-  80% { opacity: 1; transform: translateY(-10px); }
-  100% { opacity: 0; transform: translateY(-20px); }
+.offer-confirmation.start {
+  background-color: #28a745;
+}
+
+.offer-confirmation.end {
+  background-color: #dc3545;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 1200px) {
+  .admin-dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  .offer-management-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
