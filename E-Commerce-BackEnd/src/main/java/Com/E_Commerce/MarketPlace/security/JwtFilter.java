@@ -1,21 +1,24 @@
 package Com.E_Commerce.MarketPlace.security;
 
-import java.io.IOException;
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+import java.util.List;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
     @Autowired
-    JwtUtil jwtUtil;
+    private JwtUtil jwtUtil;
 
     @Override
     protected void doFilterInternal(
@@ -34,7 +37,16 @@ public class JwtFilter extends OncePerRequestFilter {
 
                 String email = jwtUtil.extractEmail(token);
 
-                request.setAttribute("email", email);
+                // ✅ Create Authentication object
+                UsernamePasswordAuthenticationToken auth =
+                        new UsernamePasswordAuthenticationToken(
+                                email,
+                                null,
+                                List.of() // later add roles here
+                        );
+
+                // ✅ Set into Spring Security
+                SecurityContextHolder.getContext().setAuthentication(auth);
 
             } catch (Exception e) {
 

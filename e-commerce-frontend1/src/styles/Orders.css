@@ -13,28 +13,28 @@
   }
 }
 
-/* ── Header ── */
 .orders-header {
   display: flex;
-  align-items: baseline;
-  gap: 16px;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* vertically align text and count */
+  gap: 12px;                /* space between title and count */
   margin-bottom: 28px;
   border-bottom: 1px solid #1e1e2a;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .orders-title {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: #514c4c;
+  color: #111827;
   margin: 0;
 }
 
 .orders-count {
-  font-size: 0.85rem;
-  color: #6b6b80;
-  font-weight: 500;
+  font-size: 1rem;
+  color: #111827;
 }
 
 /* ── Email Lookup ── */

@@ -68,7 +68,7 @@ export default function Orders() {
   const [actionErr,    setActionErr]    = useState("");
   const [cancellingId, setCancellingId] = useState(null);
   const [deliveringId, setDeliveringId] = useState(null);
-  const [shippingId,   setShippingId]   = useState(null);   // ✅ NEW
+  const [shippingId,   setShippingId]   = useState(null);   
 
   // Restore email on mount
   useEffect(() => {
@@ -110,7 +110,7 @@ export default function Orders() {
     }
   };
 
-  // ✅ NEW: Mark as Shipped — moves CONFIRMED → SHIPPED
+  // Mark as Shipped — moves CONFIRMED → SHIPPED
   const handleShip = async (orderId) => {
     setActionErr("");
     setShippingId(orderId);
@@ -143,7 +143,7 @@ export default function Orders() {
 
       {/* Header */}
       <div className="orders-header">
-        <h1 className="orders-title">My Orders</h1>
+        <h1 className="orders-title">MY ORDERS</h1>
         {ordersEmail && (
           <span className="orders-count">
             {orders.length} order{orders.length !== 1 ? "s" : ""}

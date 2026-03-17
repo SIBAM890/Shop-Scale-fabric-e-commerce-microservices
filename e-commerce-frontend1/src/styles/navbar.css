@@ -119,21 +119,16 @@ SEARCH
 ========================= */
 
 .nav-search input{
-width:260px;
+width:320px;
 padding:8px 12px;
 
 border-radius:6px;
-border:1px solid #c7b78a;
+border:2px solid #d4a21a;
 
 outline:none;
-background:white;
+background:rgb(236, 230, 230);
 }
 
-body.dark .nav-search input{
-background:#374151;
-border:1px solid #4b5563;
-color:white;
-}
 
 /* =========================
 NAV RIGHT

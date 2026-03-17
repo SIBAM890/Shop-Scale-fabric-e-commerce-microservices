@@ -1,10 +1,11 @@
+// src/router/AppRouter.jsx
+
 import { Routes, Route } from "react-router-dom";
 
+/* PAGES */
 import Home from "../pages/Home";
 import Categories from "../pages/Categories";
 import CategoryPage from "../pages/CategoryPage";
-import ProductDetails from "../components/ProductDetails";
-
 import Cart from "../pages/Cart";
 import Orders from "../pages/Orders";
 import Account from "../pages/Account";
@@ -12,17 +13,45 @@ import Account from "../pages/Account";
 import Login from "../pages/Login";
 import Signin from "../pages/Signin";
 
+import FestivalOffers from "../pages/FestivalOffers";
+import CategoryOffersPage from "../pages/CategoryOffersPage";
+
+import SettingsPage from "../pages/SettingsPage";
+
+/* COMPONENTS */
+import ProductDetails from "../components/ProductDetails";
+
+/* AUTH */
 import ProtectedRoute from "./ProtectedRoute";
 
 function AppRouter() {
   return (
     <Routes>
 
-      {/* Public Routes */}
+      {/* ---------- PUBLIC ROUTES ---------- */}
+
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signin />} />
 
-      {/* Protected Routes */}
+      <Route path="/festival-offers" element={<FestivalOffers />} />
+
+      <Route path="/festival-offers/electronics" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/fashions" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/sports" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/home-appliances" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/toys" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/jewelleries" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/footwears" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/books" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/beauty" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/automotive-spares" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/bags-luggages" element={<CategoryOffersPage />} />
+      <Route path="/festival-offers/watches" element={<CategoryOffersPage />} />
+
+
+
+      {/* ---------- PROTECTED ROUTES ---------- */}
+
       <Route
         path="/"
         element={
@@ -82,6 +111,19 @@ function AppRouter() {
         element={
           <ProtectedRoute>
             <Account />
+          </ProtectedRoute>
+        }
+      />
+
+
+
+      {/* ---------- SETTINGS PAGE ---------- */}
+
+      <Route
+        path="/settings"
+        element={
+          <ProtectedRoute>
+            <SettingsPage />
           </ProtectedRoute>
         }
       />

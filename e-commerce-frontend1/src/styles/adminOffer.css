@@ -1,0 +1,203 @@
+/* COMMON CARD STYLING */
+.settings-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 600px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* HEADINGS */
+.settings-card h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* INPUTS */
+.settings-card input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.settings-card input:focus {
+  border-color: #007bff;
+}
+
+/* BUTTONS */
+.settings-card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.settings-card button:hover {
+  background-color: #0056b3;
+}
+
+/* OFFER CARDS */
+.offer-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 500px;
+  margin-top: 10px;
+}
+
+.offer-card button {
+  width: 120px;
+  margin-top: 5px;
+  display: flex;
+}
+
+/* Buttons container inside offer card */
+.offer-btn-group {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 10px; /* space between buttons */
+  margin-top: 10px;
+}
+
+/* Individual buttons */
+.offer-btn-group button {
+  width: 120px;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+/* Start Offer Button */
+.offer-btn-group button:first-child {
+  background-color: #28a745;
+}
+
+.offer-btn-group button:first-child:hover {
+  background-color: #1e7e34;
+}
+
+/* End Offer Button */
+.offer-btn-group button:last-child {
+  background-color: #dc3545;
+}
+
+.offer-btn-group button:last-child:hover {
+  background-color: #a71d2a;
+}
+
+/* FLEX LAYOUT FOR FORM + OFFERS SIDE BY SIDE */
+.admin-flex-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* OFFER LIST CONTAINER */
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+/* OFFER BUTTONS STYLING */
+.offer-card button {
+  width: 120px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #fff;
+
+  /* center text */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  text-align: center;      /* fallback */
+}
+
+/* Start Offer Button */
+.offer-card button:nth-of-type(1) {
+  background-color: #28a745; /* green */
+}
+
+.offer-card button:nth-of-type(1):hover {
+  background-color: #1e7e34;
+}
+
+/* End Offer Button */
+.offer-card button:nth-of-type(2) {
+  background-color: #dc3545; /* red */
+}
+
+.offer-card button:nth-of-type(2):hover {
+  background-color: #a71d2a;
+}
+
+/* Optional: spacing between the buttons */
+.offer-card button + button {
+  margin-left: 10px;
+}
+
+/* Confirmation toast */
+.offer-confirmation {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 1;
+  animation: fadeOut 2s forwards;
+}
+
+/* Toast types */
+.offer-confirmation.start {
+  background-color: #28a745; /* light green */
+}
+
+.offer-confirmation.end {
+  background-color: #dc3545; /* red */
+}
+
+.offer-confirmation.create {
+  background-color: #007bff; /* blue */
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(-10px); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}

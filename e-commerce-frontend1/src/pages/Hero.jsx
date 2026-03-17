@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // import useNavigate
+import { useNavigate } from "react-router-dom";
 import "../styles/Hero.css";
 
 const Hero = () => {
@@ -24,17 +24,39 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>Welcome to QualityProducts</h1>
-        <p>Find everything you need at unbeatable prices!</p>
-        <button
-          className="shop-now-btn"
-          onClick={() => navigate("/categories")} // navigate to categories
-        >
-          Shop Now
-        </button>
+        <h1>
+          Welcome to <span>QualityProducts</span>
+        </h1>
+        <p>
+          Find everything you need at unbeatable prices!
+        </p>
+        <div className="hero-buttons">
+          <button
+            className="shop-now-btn"
+            onClick={() => {
+              console.log("Navigating to /categories");
+              navigate("/categories");
+            }}
+          >
+            Shop Now
+          </button>
+          <button
+            className="festival-btn"
+            onClick={() => {
+              console.log("Navigating to /festival-offers");
+              navigate("/festival-offers");
+            }}
+          >
+            🎉 Festival Offers
+          </button>
+        </div>
       </div>
       <div className="hero-image-container">
-        <img src={images[currentIndex]} alt="Hero Banner" className="hero-image" />
+        <img
+          src={images[currentIndex]}
+          alt="Hero Banner"
+          className="hero-image"
+        />
       </div>
     </section>
   );

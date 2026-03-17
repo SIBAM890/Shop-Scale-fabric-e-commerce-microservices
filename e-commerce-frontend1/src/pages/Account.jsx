@@ -264,6 +264,10 @@ export default function Account() {
   return (
     <div className="account-wrap">
 
+      <div className="account-header">
+        <h1>MY ACCOUNT</h1>
+      </div>
+
       {/* HERO */}
       <div className="account-hero">
 

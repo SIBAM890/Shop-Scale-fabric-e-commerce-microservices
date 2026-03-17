@@ -7,6 +7,22 @@ font-family:'Inter',sans-serif;
 display:grid;
 }
 
+.account-header {
+  width: 100%;
+  padding: 20px 30px;
+  background: #d7d8da;
+  text-align: center;
+  /* Removed the bottom border */
+  border-bottom: none;
+}
+
+.account-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
 /* HERO */
 
 .account-hero{
@@ -17,6 +33,9 @@ display:grid;
 grid-template-columns:2fr 1fr 2fr;
 gap:40px;
 align-items:center;
+border-radius: 25px;
+max-width: 1350px;
+margin: 0 auto;
 }
 
 .hero-card{

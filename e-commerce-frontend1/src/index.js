@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import { CartProvider }     from "./context/CartContext";
-import { AuthProvider }     from "./context/AuthContext";
-import { WishlistProvider } from "./context/WishlistContext";  // ✅ add
+import { CartProvider } from "./context/CartContext";
+import { AuthProvider } from "./context/AuthContext";
+import { WishlistProvider } from "./context/WishlistContext";
 
 import "./styles/theme.css";
 import App from "./App";

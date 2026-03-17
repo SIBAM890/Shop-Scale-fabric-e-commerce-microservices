@@ -1,0 +1,241 @@
+/* ===== SETTINGS LAYOUT ===== */
+.settings-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #cabcbc;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== PAGE TITLE ===== */
+.settings-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 30px 0 15px;
+}
+
+/* ===== SETTINGS NAVBAR ===== */
+.settings-navbar {
+  background:#f0adad;              /* white navbar */
+  padding: 0 20px;                  /* horizontal padding */
+  height: 70px;                     /* fixed height */
+  display: flex;                     /* flex layout */
+  align-items: center;               /* vertically center tabs */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 25px;
+  position: relative;                /* for any pseudo elements like arrows */
+  overflow: hidden;                  /* hide overflow if tabs exceed width */
+  max-width: 1350px;   /* optional: control hero width */
+  margin: 0 auto;
+}
+
+/* Tabs list */
+.settings-tabs {
+  display: flex;
+  flex-wrap: nowrap;            /* keep all tabs in one line */
+  list-style: none;
+  padding: 0;
+  margin-left: 30px;
+  overflow-x: auto;             /* enable horizontal scroll */
+  scroll-behavior: smooth;      /* smooth scrolling */
+  -ms-overflow-style: none;     /* hide scrollbar in IE/Edge */
+  scrollbar-width: none;        /* hide scrollbar in Firefox */
+  
+}
+
+.settings-tabs::-webkit-scrollbar {
+  display: none;                /* hide scrollbar in Chrome/Safari */
+}
+
+.settings-tabs li {
+  flex: 0 0 auto;               /* prevent shrinking */
+  margin: 6px 10px;
+  padding: 8px 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: #f0f0f0;
+  color: #111827;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.settings-tabs li:hover {
+  background: #e2e6ea;
+}
+
+.settings-tabs li.active {
+  background: #111827;
+  color: white;
+  font-weight: 600;
+}
+
+/* Right arrow indicator */
+.settings-tabs-wrapper::after {
+  content: "›";                /* greater-than symbol */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #111827;
+  pointer-events: none;        /* doesn’t block clicks */
+  background: linear-gradient(to left, white, rgba(255,255,255,0)); /* fade effect */
+  padding-left: 10px;
+}
+
+/* ===== CONTENT AREA ===== */
+.settings-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+/* ===== FORM CARD (LEFT) ===== */
+.settings-card {
+  flex: 0 0 45%;
+  max-width: 600px;
+  background: rgb(235, 232, 232);
+  padding: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.settings-card h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* FORM FIELDS */
+.settings-card label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.settings-card input,
+.settings-card select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.settings-card input:focus,
+.settings-card select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* BUTTONS */
+.settings-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.settings-save-btn {
+  background-color: #4caf50;
+  color: white;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  height: 40px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.settings-save-btn:hover {
+  background-color: #3c9b40;
+}
+
+.settings-clear-btn {
+  background-color: #f44336;
+  color: white;
+  border: 2px solid #f44336;
+  border-radius: 5px;
+  height: 40px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.settings-clear-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* ===== PREFERENCE CARD (RIGHT) ===== */
+.settings-preference {
+  flex: 0 0 50%;
+  max-width: 600px;
+   background: rgb(235, 232, 232);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.settings-preference h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* GRID INSIDE PREFERENCE */
+.preferences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.preference-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .settings-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .settings-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .settings-card,
+  .settings-preference {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .settings-tabs {
+    justify-content: center;
+  }
+
+  .settings-tabs li {
+    margin-bottom: 8px;
+  }
+}

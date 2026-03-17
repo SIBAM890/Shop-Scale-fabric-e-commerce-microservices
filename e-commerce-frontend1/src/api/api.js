@@ -4,6 +4,89 @@ const API_URL       = "http://localhost:8080/api/products";
 const ORDER_API_URL = "http://localhost:8080/api";
 const AUTH_API      = "http://localhost:8080/auth";
 const ADDRESS_API   = "http://localhost:8080/api/address";
+const API_BASE_URL = "http://localhost:8080/api/festival";
+const STORE_SETTINGS_API = "http://localhost:8080/api/storesettings";
+const BASE_URL = "http://localhost:8080";
+
+// ADMIN LOGIN
+export const adminLogin = async (data) => {
+  const res = await axios.post(`${BASE_URL}/api/admin/login`, data);
+  return res.data;
+};
+
+// GET OFFERS
+export const getOffers = async () => {
+  const res = await axios.get(`${BASE_URL}/api/offers`);
+  return res.data;
+};
+
+// CREATE OFFER
+export const createOffer = async (offer, adminName, password) => {
+  const res = await axios.post(
+    `${BASE_URL}/api/offers?adminName=${adminName}&password=${password}`,
+    offer
+  );
+  return res.data;
+};
+
+// UPDATE OFFER
+export const updateOffer = async (id, offer, adminName, password) => {
+  const res = await axios.put(
+    `${BASE_URL}/api/offers/${id}?adminName=${adminName}&password=${password}`,
+    offer
+  );
+  return res.data;
+};
+
+// Get user settings by email
+export const getSettingsByEmail = async (email) => {
+  if (!email || !email.trim()) throw new Error("Email is required");
+  const encoded = encodeURIComponent(email.trim());
+  const res = await axios.get(`${STORE_SETTINGS_API}/${encoded}`);
+  return res.data;
+};
+
+// Get all user preferences
+export const getAllPreferences = async () => {
+  const res = await axios.get(`${STORE_SETTINGS_API}/all`);
+  return res.data;
+};
+
+// Save or update store settings
+export const saveSettings = async (data) => {
+  const res = await axios.post(`${STORE_SETTINGS_API}/save`, data);
+  return res.data;
+};
+
+
+export const getPreferences = async () => {
+  const res = await fetch("http://localhost:8080/api/storesettings/all");
+  return res.json();
+};
+
+export const festivalService = {
+  getAllOffers: async () => {
+    const response = await fetch(`${API_BASE_URL}/all`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) throw new Error("Failed to fetch offers");
+    return await response.json();
+  },
+
+  getOfferById: async (id) => {
+    const response = await fetch(`${API_BASE_URL}/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) throw new Error("Failed to fetch offer");
+    return await response.json();
+  },
+};
 
 // ── Auth ──────────────────────────────────────────────
 export const loginUser  = (data) => axios.post(`${AUTH_API}/login`,  data);

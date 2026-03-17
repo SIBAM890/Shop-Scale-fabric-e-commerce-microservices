@@ -21,7 +21,7 @@ public class Product {
     private String name;
 
     private String category;
-    private double price;
+    private Double price;
     private int stock;
 
     @Column(length = 1000)      // image URLs can be very long

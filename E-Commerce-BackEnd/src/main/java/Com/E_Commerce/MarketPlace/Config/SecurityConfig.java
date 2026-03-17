@@ -50,6 +50,12 @@ public class SecurityConfig {
                         .requestMatchers("/api/products/**").permitAll()
                         .requestMatchers("/api/orders/**").permitAll()
                         .requestMatchers("/api/address/**").permitAll()
+                        .requestMatchers("/api/festival/**").permitAll()
+                        // PUBLIC APIs
+                        .requestMatchers("/api/store").permitAll()
+                        .requestMatchers("/api/admin/**").permitAll()
+                        .requestMatchers("/api/offers/**").permitAll()
+
                         .anyRequest().authenticated()
                 )
 

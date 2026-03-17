@@ -6,27 +6,29 @@
   font-family: 'Sora','DM Sans',sans-serif;
 }
 
-.cart-header{
-  display:flex;
-  align-items:baseline;
-  gap:16px;
-  margin-bottom:40px;
-  border-bottom:1px solid #1e1e2a;
-  padding-bottom:20px;
+.cart-header {
+  display: flex;
+  justify-content: center;   /* centers content horizontally */
+  align-items: center;       /* vertically aligns text and count */
+  gap: 12px;                 /* space between title and count */
+  margin-bottom: 40px;
+  border-bottom: 1px solid #1e1e2a;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
-.cart-title{
-  font-size:2rem;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:#514c4c;
-  margin:0;
+.cart-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+  margin: 0;
 }
 
-.cart-count{
-  font-size:0.85rem;
-  color:#6b6b80;
-  font-weight:500;
+.cart-count {
+  font-size: 0.85rem;
+  color: #111827;
+  font-weight: 500;
 }
 
 /* ---------------- GRID LAYOUT ---------------- */
